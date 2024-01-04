@@ -1,5 +1,5 @@
 import React from "react";
-import shoppingBag from 'shopping-bag.png';
+import shoppingBag from '../../assets/shopping-bag.png';
 import './cart-icon.styles.scss';
 
 const CartIcon = () => {
