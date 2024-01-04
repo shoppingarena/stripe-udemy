@@ -4,15 +4,18 @@ import Buton from "../button/button";
 
 const Hero = () => {
     return (
-        <section className='hero is-large is-info'>
+        <section className='hero is-large is-info center'>
   <div className='hero-body'>
-    <p className='title'>
+    <p className='title title-hero'>
       Large hero
     </p>
     <p className='subtitle'>
       Large subtitle
+      
     </p>
-    <Buton />
+    <p className="p-center">
+        <Buton />
+    </p>
   </div>
 </section>
     );
