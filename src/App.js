@@ -1,9 +1,10 @@
+import Header from './components/header/header';
 import './App.scss';
 
 function App() {
   return (
     <div className="App">
-      stripe-udemy
+      <Header />
     </div>
   );
 }
