@@ -5,7 +5,8 @@ const Footer = () => {
     const year = new Date().getFullYear();
     return (
         <div className="footer">
-            {year} Nomad Store
+         {/*Comment: 'How to write copyright symbol?:' alt + 0169 */}
+            {year} © Nomad Store
         </div>
     );
 }
