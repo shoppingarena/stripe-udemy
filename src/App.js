@@ -1,3 +1,5 @@
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import HomePage from './components/home-page';
 import Header from './components/header/header';
 import Hero from './components/hero/hero';
 import MainSection from './components/main-section/main-section';
@@ -8,13 +10,14 @@ import './App.scss';
 function App() {
   return (
     <>
-    <div className='App'>
-      <Header />
-      <Hero />
-      <MainSection />
-      <FeaturedCollection />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        {/*<div className='App'>*/}
+          <Route path="/" element={<HomePage />} />
+        {/*</div>*/}
+      </Routes>
+    </BrowserRouter>
+    
     </>
   );
 }
