@@ -2,10 +2,10 @@ import React from "react";
 import './featured-product.style.scss';
 
 const FeaturedProduct = (product) => {
-    const { title, imageUrl, price } = product;
+    const { title, imageUrl, price, id } = product;
 
     return (
-        <div className="featured-product">
+        <div className="featured-product" key={id}>
             <div className="featured-image">
                 <img src={imageUrl} alt='product' />
             </div>

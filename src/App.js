@@ -1,21 +1,21 @@
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import ProductsContextProvider from './context/products-context';
 import HomePage from './components/home-page';
-import Header from './components/header/header';
-import Hero from './components/hero/hero';
-import MainSection from './components/main-section/main-section';
-import FeaturedCollection from './components/featured-collection/featured-collection';
-import Footer from './components/footer/footer';
+import NotFound from './components/not-found';
 import './App.scss';
 
 function App() {
   return (
     <>
     <BrowserRouter>
+    <ProductsContextProvider>
       <Routes>
         {/*<div className='App'>*/}
           <Route path="/" element={<HomePage />} />
+          <Route path="*" element={<NotFound />} />
         {/*</div>*/}
       </Routes>
+      </ProductsContextProvider>
     </BrowserRouter>
     
     </>

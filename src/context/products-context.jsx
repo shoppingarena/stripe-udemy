@@ -8,9 +8,13 @@ const ProductsContextProvider = ({ children }) => {
 
     return (
         <ProductsContext.Provider value={{ products }}>
-            {
+             {Array.isArray(children) ? (
+                children.map((child, index) => (
+                    <React.Fragment key={index}>{child}</React.Fragment>
+                ))
+            ) : (
                 children
-            }
+            )}
         </ProductsContext.Provider>
     );
 }
