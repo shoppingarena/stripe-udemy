@@ -1,4 +1,4 @@
-import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ProductsContextProvider from './context/products-context';
 import HomePage from './components/home-page';
 import NotFound from './components/not-found';
