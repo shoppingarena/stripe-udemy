@@ -11,11 +11,13 @@ const Shop = () => {
     ));
 
     return (
-        <div className="">
-            <h2>Shop</h2>
-            <div>
+        <div className="product-list-container">
+            <h2 className="product-list-title">Shop</h2>
+            <div className="product-list">
                 { allProducts }
             </div>
         </div>
     );
 }
+
+export default Shop;
