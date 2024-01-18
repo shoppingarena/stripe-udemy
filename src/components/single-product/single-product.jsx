@@ -1,11 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { ProductsContext } from "../../context/products-context";
 import Layout from "../shared/layout";
 import "./single-product.styles.scss";
 
 const SingleProduct = ({ match, history: { push } }) => {
     const { products } = useContext(ProductsContext);
-    const { id } = match.params;
+    const { id } = useParams();
     const [product, setProduct ] = useState(null);
     useEffect(() => {
         const product = products.find(item => Number(item.id) === Number(id));
@@ -16,7 +17,7 @@ const SingleProduct = ({ match, history: { push } }) => {
         }
 
         setProduct(product);
-    });
+    }, [products, id, push]);
     // while we check for product
     if(!product) { return null }
 
