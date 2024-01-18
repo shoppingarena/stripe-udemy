@@ -12,11 +12,13 @@ const SingleProduct = ({ match, history: { push } }) => {
 
         // if product does not exist, redirect to shop page
         if (!product) {
-            return PushManager('/shop');
+            return push('/shop');
         }
 
         setProduct(product);
     });
+    // while we check for product
+    if(!product) { return null }
 
     const { imageUrl, title, price, description } = product;
     return (
