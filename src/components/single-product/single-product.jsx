@@ -1,10 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { redirect, useParams, useNavigate } from "react-router-dom";
 import { ProductsContext } from "../../context/products-context";
 import Layout from "../shared/layout";
 import "./single-product.styles.scss";
 
-const SingleProduct = ({ match, history: { push } }) => {
+const SingleProduct = () => {
+    const navigate = useNavigate();
     const { products } = useContext(ProductsContext);
     const { id } = useParams();
     const [product, setProduct ] = useState(null);
@@ -13,11 +14,11 @@ const SingleProduct = ({ match, history: { push } }) => {
 
         // if product does not exist, redirect to shop page
         if (!product) {
-            return push('/shop');
+            return navigate('/shop');
         }
 
         setProduct(product);
-    }, [products, id, push]);
+    }, [products, id, navigate]);
     // while we check for product
     if(!product) { return null }
 
