@@ -1,12 +1,15 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { ProductsContext } from "../../context/products-context";
+import { CartContext } from "../../context/cart-context";
+import { isInCart } from "../helpers";
 import Layout from "../shared/layout";
 import "./single-product.styles.scss";
 
 const SingleProduct = () => {
     const navigate = useNavigate();
     const { products } = useContext(ProductsContext);
+    const { addProduct, cartItems} = useContext(CartContext);
     const { id } = useParams();
     const [product, setProduct ] = useState(null);
     useEffect(() => {
@@ -35,8 +38,23 @@ const SingleProduct = () => {
                         <p>{price}</p>
                     </div>
                     <div className="add-to-cart-btns">
-                        <button className="button is-white nomad-btn" id="btn-white-outline">ADD TO CART              
+                    {
+                        !isInCart(product, cartItems) &&
+                        <button className="button is-white nomad-btn" 
+                        id="btn-white-outline"
+                        onClick={() => addProduct(product)}>
+                        ADD TO CART              
                         </button>
+                    }
+                    {
+                        isInCart(product, cartItems) &&
+                        <button className="button is-white nomad-btn" 
+                        id="btn-white-outline"
+                        onClick={() =>{}}>
+                        ADD MORE              
+                        </button>
+                    }
+                        
                         <button className="button is-black nomad-btn" id="btn-white-outline">PROCEED TO CHECKOUT</button>
                     </div>
                     <div className="product-description">
