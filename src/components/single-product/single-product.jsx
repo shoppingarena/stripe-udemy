@@ -18,7 +18,7 @@ const SingleProduct = () => {
         }
 
         setProduct(product);
-    }, [products, id, navigate]);
+    }, [product, products, id, navigate]);
     // while we check for product
     if(!product) { return null }
 
