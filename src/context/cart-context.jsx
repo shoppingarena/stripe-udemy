@@ -15,7 +15,7 @@ const contextValues = {
 }
 
 return (
-    <CartContext.Provider value={{ contextValues }}>
+    <CartContext.Provider value={ contextValues }>
         {
             Children
         }
