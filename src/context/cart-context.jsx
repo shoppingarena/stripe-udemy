@@ -17,7 +17,7 @@ const contextValues = {
 return (
     <CartContext.Provider value={ contextValues }>
         {
-            Children
+            children
         }
     </CartContext.Provider>
 );
