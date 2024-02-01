@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { redirect, useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { ProductsContext } from "../../context/products-context";
 import Layout from "../shared/layout";
 import "./single-product.styles.scss";
