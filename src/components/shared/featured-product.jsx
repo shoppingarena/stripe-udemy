@@ -8,7 +8,7 @@ const FeaturedProduct = (props) => {
     const navigate = useNavigate();
     const { title, imageUrl, price, id, description } = props;
     const product = { title, imageUrl, price, id, description};
-    const { addProduct, cartItems } = useContext(CartContext);
+    const { addProduct, cartItems, increase } = useContext(CartContext);
 
     return (
         <div className="featured-product" key={id}>
@@ -28,7 +28,7 @@ const FeaturedProduct = (props) => {
                     isInCart(product, cartItems) &&
                     <button className="button is-white nomad-btn"
                     id='btn-white-outline'
-                    onClick={() => {}}>
+                    onClick={() => increase(product)}>
                     ADD MORE</button>
                 }
                 
