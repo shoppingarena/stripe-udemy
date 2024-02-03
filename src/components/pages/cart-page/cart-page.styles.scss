@@ -1,3 +1,7 @@
+h1, .empty-cart {
+    text-align: center;
+}
+
 .cart-item {
     text-align: center;
     border: 1px solid #ccc;
@@ -41,6 +45,10 @@
     }
 
     @media(min-width: 1024px) {
+        .cart-page {
+            display: flex;
+            justify-content: center;
+        }
         .cart-item {
             display: flex;
             justify-content: space-between;
