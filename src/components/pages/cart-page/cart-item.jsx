@@ -7,7 +7,7 @@ const CartItem = (product) =>
 {
 // we going to desctructure some properties from product
 // we need title, imageUrl, ....
-const { title, imageUrl, proce, quantity } = product;
+const { title, imageUrl, price, quantity } = product;
 
 
 // we going to return some jsx
