@@ -1,5 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+
 import { PlusCircleIcon, MinusCircleIcon, TrashIcon } from "../../icons";
+
+import { CartContext } from "../../../context/cart-context";
+
 
 // we going to build component
 const CartItem = (product) => 
@@ -8,6 +12,10 @@ const CartItem = (product) =>
 // we going to desctructure some properties from product
 // we need title, imageUrl, ....
 const { title, imageUrl, price, quantity } = product;
+
+
+const { increase } = useContext(CartContext);
+
 
 
 // we going to return some jsx
@@ -24,7 +32,7 @@ return (
             <p>Quantity: {quantity}</p>
         </div>
         <div className="btns-container">
-            <button className="btn-increase">
+            <button className="btn-increase" onClick={() => increase(product)} >
                 <PlusCircleIcon width='20px' />
             </button>
             {   // testing to show Trash button if there is some quantity
