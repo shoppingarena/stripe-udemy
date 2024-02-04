@@ -14,7 +14,7 @@ const CartItem = (product) =>
 const { title, imageUrl, price, quantity } = product;
 
 
-const { increase } = useContext(CartContext);
+const { increase, decrease } = useContext(CartContext);
 
 
 
@@ -43,7 +43,7 @@ return (
             }
             { // another testing to show  Increase button if there is at least min 1 quantity
                 quantity > 1 &&
-                <button className="btn-decrease">
+                <button className="btn-decrease" onClick={() => decrease(product)} >
                     <MinusCircleIcon width='20px' />
                 </button>
             }
