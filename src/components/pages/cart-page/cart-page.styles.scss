@@ -1,5 +1,17 @@
-h1, .empty-cart {
+.cart-page {
     text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+.empty-cart {
+    /*display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+*/
 }
 
 .cart-item {
@@ -25,7 +37,7 @@ h1, .empty-cart {
     }
 
     .btns-container {
-        bottom {
+        botton {
             border: none;
             padding: 0.5rem 1rem;
             cursor: pointer;
