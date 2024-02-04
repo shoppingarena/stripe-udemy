@@ -16,8 +16,11 @@ const Total = ({ itemCount, total }) => {
             </div>
             <div className="checkout">
                 <button className="button is-black" onClick={clickCheckout}>CHECKOUT</button>
+                <button className="button is-white" onClick={}>CLEAR</button>
             </div>
 
         </div>
-    )
+    );
 }
+
+export default Total;
