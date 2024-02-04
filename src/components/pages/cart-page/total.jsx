@@ -16,7 +16,9 @@ const Total = ({ itemCount, total }) => {
             </div>
             <div className="checkout">
                 <button className="button is-black" onClick={clickCheckout}>CHECKOUT</button>
-                <button className="button is-white" onClick={}>CLEAR</button>
+                <button className="button is-white" 
+                //to do add onclick={}
+                >CLEAR</button>
             </div>
 
         </div>
