@@ -21,7 +21,7 @@ return (
             <p>${price}</p>
         </div>
         <div className="quantity">
-            <p>Quantity: ${quantity}</p>
+            <p>Quantity: {quantity}</p>
         </div>
         <div className="btns-container">
             <button className="btn-increase">
