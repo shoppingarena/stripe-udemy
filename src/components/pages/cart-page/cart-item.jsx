@@ -14,7 +14,7 @@ const CartItem = (product) =>
 const { title, imageUrl, price, quantity } = product;
 
 
-const { increase, decrease } = useContext(CartContext);
+const { increase, decrease, remove} = useContext(CartContext);
 
 
 
@@ -37,7 +37,7 @@ return (
             </button>
             {   // testing to show Trash button if there is some quantity
                 quantity === 1 &&
-                <button className="btn-trash">
+                <button className="btn-trash" onClick={() => remove(product)} >
                     <TrashIcon width='20px' />
                 </button>
             }
