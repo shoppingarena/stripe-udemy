@@ -6,7 +6,7 @@ import Total from "./total";
 import "../cart-page/cart-page.styles.scss";
 
 const CartPage = () => {
-    const { cartItems, itemCount, total,} = useContext(CartContext);
+    const { cartItems, itemCount, total, clearCart} = useContext(CartContext);
     
     return (
         <Layout>
@@ -23,7 +23,7 @@ const CartPage = () => {
                                 }
                             </div>
                         </div>
-                        <Total itemCount={itemCount} total={total} />
+                        <Total itemCount={itemCount} total={total} clearCart={clearCart} />
                     </>
                 }
             </div>

@@ -14,7 +14,7 @@ const CartItem = (product) =>
 const { title, imageUrl, price, quantity } = product;
 
 
-const { increase, decrease, remove} = useContext(CartContext);
+const { increase, decrease, remove } = useContext(CartContext);
 
 
 
