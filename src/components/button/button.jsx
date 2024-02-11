@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import './button.styles.scss';
 
 const Buton = () => {
     return (
-        <button className='button is-black' id='shop-now'>SHOP NOW</button>
+        <Link to='/shop' className='button is-black' id='shop-now'>SHOP NOW</Link>
     );
 }
 

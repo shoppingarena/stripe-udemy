@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import './hero.styles.scss';
-import Buton from "../button/button";
+
 
 const Hero = () => {
     return (
@@ -11,7 +12,7 @@ const Hero = () => {
         Bags reimagined for modern life.
       </h1>
       <div className='shop-now-btn'>
-        <Buton />
+      <Link to='/shop' className='button is-black' id='shop-now'>SHOP NOW</Link>
       </div>
     </div>
   </div>
