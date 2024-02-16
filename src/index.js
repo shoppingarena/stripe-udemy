@@ -5,14 +5,24 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
+//import dotenv from 'dotenv';
+//require('dotenv').config();
+
+
+// Load environment variables from .env file
+ 
+
+const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <StrictMode>
     
-        
+        <Elements stripe={stripePromise}>
             <App />
+        </Elements>
+            
         
     
     </StrictMode>
