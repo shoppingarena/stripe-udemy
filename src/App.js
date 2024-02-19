@@ -8,6 +8,7 @@ import SingleProduct from './components/single-product/single-product';
 import CartPage from './components/pages/cart-page/cart-page';
 import Checkout from './components/checkout/checkout';
 import Success from './components/checkout/success';
+import Canceled from './components/checkout/canceled';
 import './App.scss';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
               <Route path='/cart' element={<CartPage />} />
               <Route path='/checkout' element={<Checkout />} />
               <Route path='/success' element={<Success />} />
+              <Route path='/canceled' element={<Canceled />} />
               <Route path="*" element={<NotFound />} />
             {/*</div>*/}
           </Routes>
