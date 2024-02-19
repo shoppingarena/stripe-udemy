@@ -1,21 +1,22 @@
 import React, { useContext, useEffect} from "react";
-import Layout from '../shared/layout';
-import { CartContext } from '../../context/cart-context';
+import Layout from '../../shared/layout';
+import { CartContext } from '../../../context/cart-context';
 import { useNavigate } from "react-router-dom";
 
 const Success = () => {
-    const { clearCart} = useContext(CartContext);
+    const { clearCart, cartItems } = useContext(CartContext);
+    const navigate = useNavigate();
     /**
      * code before: useEffect(clearCart, []);
      * React Hook useEffect has a missing dependency: 'clearCart'.
      * Either include it or remove the dependency array  react-hooks/exhaustive-deps
      */
     useEffect(() => {
-        clearCart();
-    }, [clearCart]);
+        // Use a callback function to avoid state update loop
+        if (cartItems.length !==0) { clearCart() } },
+        [clearCart, cartItems]);
 
-    let navigate = useNavigate();
-    const clickContinue = () => {navigate('/shop');}
+        const clickContinue = () => {navigate('/shop');}
 
     return (
         <Layout>

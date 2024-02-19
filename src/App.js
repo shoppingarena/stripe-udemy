@@ -7,8 +7,8 @@ import Shop from './components/pages/shop/shop';
 import SingleProduct from './components/single-product/single-product';
 import CartPage from './components/pages/cart-page/cart-page';
 import Checkout from './components/checkout/checkout';
-import Success from './components/checkout/success';
-import Canceled from './components/checkout/canceled';
+import Success from './components/checkout/stripe-checkout/success';
+import Canceled from './components/checkout/stripe-checkout/canceled';
 import './App.scss';
 
 function App() {
