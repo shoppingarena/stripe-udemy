@@ -22,3 +22,5 @@ const Canceled = () => {
         </Layout>
     );
 }
+
+export default Canceled;
