@@ -23,7 +23,7 @@ function App() {
               <Route path='/product/:id' element={<SingleProduct />} />
               <Route path='/cart' element={<CartPage />} />
               <Route path='/checkout' element={<Checkout />} />
-              <Route path='/shop' element={<Success />} />
+              <Route path='/success' element={<Success />} />
               <Route path="*" element={<NotFound />} />
             {/*</div>*/}
           </Routes>
