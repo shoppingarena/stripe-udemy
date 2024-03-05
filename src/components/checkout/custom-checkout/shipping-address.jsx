@@ -1,7 +1,7 @@
 import React from "react";
 import { Formik } from  "formik";
 
-const validate = values => {
+const validate = (values) => {
     const { name, email, address } = values;
     const errors = {};
     if (!email) { errors.email = 'Required'};
