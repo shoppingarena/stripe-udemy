@@ -73,3 +73,5 @@ const ShippingAddress = () => {
         </div>
     )
 }
+
+export default ShippingAddress;
