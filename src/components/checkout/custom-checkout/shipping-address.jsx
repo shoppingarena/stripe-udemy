@@ -59,6 +59,12 @@ const ShippingAddress = () => {
                                         className={ 'nomad-input' + (address? 'error' : '')}
                                     />
                                 </div>
+                                <div className="submit-btn">
+                                    <button type='submit' className="button is-black nomad-btn submit">
+                                        CONTINUE
+                                    </button>
+                                </div>
+
                             </form>
                         )
                     }
