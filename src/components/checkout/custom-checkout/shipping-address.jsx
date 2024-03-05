@@ -2,11 +2,16 @@ import React from "react";
 import { Formik } from  "formik";
 
 const ShippingAddress = () => {
+    const initialValues = {
+        email: '',
+        name: '',
+        address: '',
+    }
     return (
         <div>
             <h4>Shipping Address</h4>
             <Formik
-                initialValues={}
+                initialValues={initialValues}
                 validate={}
                 onSubmit={(values) => {
                     console.log('values', values);
