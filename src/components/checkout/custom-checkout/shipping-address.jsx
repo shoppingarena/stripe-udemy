@@ -11,7 +11,7 @@ const validate = values => {
     return errors;
 }
 
-const ShippingAddress = () => {
+const ShippingAddress = ({setShipping}) => {
     const initialValues = {
         email: '',
         name: '',
@@ -25,6 +25,7 @@ const ShippingAddress = () => {
                 validate={validate}
                 onSubmit={(values) => {
                     console.log('values', values);
+                    setShipping(values);
                 }}
             >
                 {
@@ -38,6 +39,7 @@ const ShippingAddress = () => {
                                         name='name'
                                         onChange={handleChange}
                                         value={values.name}
+                                        placeholder="Name"
                                         className={ 'nomad-input' + (name? 'error' : '')}
                                     />
                                 </div>
@@ -47,6 +49,7 @@ const ShippingAddress = () => {
                                         name='email'
                                         onChange={handleChange}
                                         value={values.email}
+                                        placeholder="Email"
                                         className={ 'nomad-input' + (email? 'error' : '')}
                                     />
                                 </div>
@@ -56,6 +59,7 @@ const ShippingAddress = () => {
                                         name='address'
                                         onChange={handleChange}
                                         value={values.address}
+                                        placeholder="Address"
                                         className={ 'nomad-input' + (address? 'error' : '')}
                                     />
                                 </div>
