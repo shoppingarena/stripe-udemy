@@ -5,7 +5,13 @@ const ShippingAddress = () => {
     return (
         <div>
             <h4>Shipping Address</h4>
-            <Formik>
+            <Formik
+                initialValues={}
+                validate={}
+                onSubmit={(values) => {
+                    console.log('values', values);
+                }}
+            >
                 {
                     ({ values, errors, handleChange, handleSubmit }) => {
                         const { name, email, address } = errors;
