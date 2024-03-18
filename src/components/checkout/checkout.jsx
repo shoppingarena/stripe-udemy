@@ -20,7 +20,7 @@ const Checkout = () => {
             <h4>{`Amount to Pay: ${total}`}</h4>
              
             <div style={addressShown}>
-                <ShippingAddress  setShipping={setShipping}/>
+                <ShippingAddress  setShipping={setShipping} />
             </div>
         </div>
         </Layout>
