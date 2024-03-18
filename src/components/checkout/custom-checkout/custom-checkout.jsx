@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { withRouter } from 'react-router-dom';
 import { 
     CardNumberElement,
@@ -9,10 +9,38 @@ import {
  } from "@stripe/react-stripe-js";
  import { fetchFromAPI } from "../../helpers"; 
 
- const CustomCheckout = () => {
+ const CustomCheckout = ({ shipping, cartItems, history: { push}}) => {
     const  [processing, setProcessing] = useState(false);
     const [error, setError] = useState(null);
+    const [clientSecret, setClientSecret] = useState(null);
     const elements = useElements();
+    
+    useEffect(() => {
+        const items = cartItems.map(item => ({price: item.price, quantity: item.quantity}));
+        if (shipping) {
+               const body = {
+                cartItems: items,
+                shipping: {
+                    name: shipping.name,
+                    address: {
+                        line1: shipping.address
+                    }
+                },
+                description: 'payment intent for nomad shop',
+                receipt_email: shipping.email,
+               }
+               
+               const CustomCheckout = async () => {
+                const { clientSecret } = await fetchFromAPI('create-payment-intent', {
+                    body
+                });
+
+                setClientSecret(clientSecret)
+               }
+
+               CustomCheckout();
+        }
+    });
 
     const cardHandleChange = event => {
         const { error } = event;
