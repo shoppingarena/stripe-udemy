@@ -40,7 +40,9 @@ import {
 
                CustomCheckout();
         }
-    });
+    }, [shipping, cartItems]);
+
+    const handleCheckout = async () => {}
 
     const cardHandleChange = event => {
         const { error } = event;
