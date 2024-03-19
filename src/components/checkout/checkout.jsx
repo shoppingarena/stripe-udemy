@@ -3,6 +3,7 @@ import { CartContext } from '../../context/cart-context';
 import Layout from '../shared/layout';
 // import StripeCheckout from "./stripe-checkout/stripe-checkout";
 import ShippingAddress from "./custom-checkout/shipping-address";
+import CustomCheckout from "./custom-checkout/custom-checkout";
 import './checkout.styles.scss';
 
 const Checkout = () => {
@@ -10,6 +11,9 @@ const Checkout = () => {
     const [shipping, setShipping] = useState(null);
     const addressShown = {
         display: (shipping ? 'none' : 'block')
+    }
+    const cardShown = {
+        display: (shipping ? 'block' : 'none')
     }
 
     return (
@@ -21,6 +25,9 @@ const Checkout = () => {
              
             <div style={addressShown}>
                 <ShippingAddress  setShipping={setShipping} />
+            </div>
+            <div style={cardShown}>
+                <CustomCheckout />
             </div>
         </div>
         </Layout>
