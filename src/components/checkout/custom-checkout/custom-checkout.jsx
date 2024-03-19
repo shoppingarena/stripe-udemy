@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { withRouter } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { 
     CardNumberElement,
     CardExpiryElement,
@@ -9,7 +9,8 @@ import {
  } from "@stripe/react-stripe-js";
  import { fetchFromAPI } from "../../helpers"; 
 
- const CustomCheckout = ({ shipping, cartItems, history: { push}}) => {
+ const CustomCheckout = ({ shipping, cartItems }) => {
+    const navigate = useNavigate();
     const  [processing, setProcessing] = useState(false);
     const [error, setError] = useState(null);
     const [clientSecret, setClientSecret] = useState(null);
@@ -54,7 +55,7 @@ import {
         if (payload.error) {
             setError(`Payment Failed: ${payload.error.message}`);
         } else {
-            push('/success');
+            navigate('/success');
         }
     }
 

@@ -7,7 +7,7 @@ import CustomCheckout from "./custom-checkout/custom-checkout";
 import './checkout.styles.scss';
 
 const Checkout = () => {
-    const { itemCount, total } = useContext(CartContext);
+    const { itemCount, total, cartItems } = useContext(CartContext);
     const [shipping, setShipping] = useState(null);
     const addressShown = {
         display: (shipping ? 'none' : 'block')
@@ -27,7 +27,7 @@ const Checkout = () => {
                 <ShippingAddress  setShipping={setShipping} />
             </div>
             <div style={cardShown}>
-                <CustomCheckout />
+                <CustomCheckout { ...{shipping, cartItems} }/>
             </div>
         </div>
         </Layout>
