@@ -13,6 +13,7 @@ import {
     const  [processing, setProcessing] = useState(false);
     const [error, setError] = useState(null);
     const [clientSecret, setClientSecret] = useState(null);
+    const stripe = useStripe();
     const elements = useElements();
     
     useEffect(() => {
@@ -42,7 +43,20 @@ import {
         }
     }, [shipping, cartItems]);
 
-    const handleCheckout = async () => {}
+    const handleCheckout = async () => {
+        setProcessing(true);
+        const payload = await stripe.confirmCardPayment(clientSecret, {
+            payment_method: {
+                card: elements.getElement(CardNumberElement)
+            }
+        });
+
+        if (payload.error) {
+            setError(`Payment Failed: ${payload.error.message}`);
+        } else {
+            push('/success');
+        }
+    }
 
     const cardHandleChange = event => {
         const { error } = event;
