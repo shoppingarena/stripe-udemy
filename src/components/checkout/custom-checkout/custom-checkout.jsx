@@ -68,7 +68,7 @@ import {
         style: {
             base: {
               iconColor: '#c4f0ff',
-              color: '#fff',
+              color: '#000',
               fontWeight: '500',
               fontFamily: 'Roboto, Open Sans, Segoe UI, sans-serif',
               fontSize: '16px',
