@@ -1,3 +1,12 @@
+# Upgraded Stripe Masterclass React Front-end
+
+# Main Branches
+
+1/ dev-stripe-hosted-checkout
+2/ dev-stripe-custom-checkout
+3/ dev-authentication
+    sub-branches/ authentication-front
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
